@@ -1,0 +1,1315 @@
+//Font Families
+$impact: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+$avenir: 'Avenir';
+
+//Colors
+$lightcolor: #F9F5EE;
+$darkgrey: hsl(0, 0%, 20%);
+$red: #C3553B;
+
+//Sizes
+$iconMargin: 8px;
+$marginX2: 16px;
+$marginX: 24px;
+$margin2x: 32px;
+$margin3x: 48px;
+$margin4x: 72px;
+$usualImgHeight: 455px;
+
+//Font Sizes
+$h1-fontsize: 72px;
+$h2-fontsize: 64px;
+$h3-fontsize: 48px;
+$h4-fontsize: 32px;
+$h5-fontsize: 28px;
+$h6-fontsize: 24px;
+
+
+//Screen Sizes for Responsive
+$lg-size: 992px;
+$md-size: 768px;
+$xs-size: 576px;
+
+// MIXINS
+
+//ul-list
+@mixin ulItems ($justify-content){
+    list-style-type: none !important;
+    display: flex !important;
+    justify-content: $justify-content !important;
+    align-items: center !important;
+    gap: 58px;
+
+}
+
+@mixin neutralLink($color){
+    text-decoration: none;
+    color: $color;
+}
+
+//borders
+@mixin borderDesign ($borderSize){
+    border: $borderSize $darkgrey solid !important;
+}
+
+@mixin borderBottom ($borderSize){
+    border-bottom: $borderSize $darkgrey solid !important;
+}
+
+@mixin borderTop ($borderSize){
+    border-top: $borderSize $darkgrey solid !important;
+}
+
+@mixin borderRight ($borderSize){
+    border-right: $borderSize $darkgrey solid !important;
+}
+
+@mixin borderLeft ($borderSize){
+    border-left: $borderSize $darkgrey solid !important;
+}
+
+@mixin borderTopBottom ($borderSize){
+    border-bottom: $borderSize $darkgrey solid !important;
+    border-top: $borderSize $darkgrey solid !important;
+}
+
+@mixin dashedBorder {
+    border-bottom: $darkgrey 2px dashed;
+}
+
+@mixin borderTopRight {
+    @include borderTop(4px);
+    @include borderRight(4px);
+}
+
+@mixin borderLeftOrRight ($color){
+    @if ($color == $lightcolor){
+        @include borderRight(2px);
+    } @else {
+        @include borderLeft(2px);
+    }
+}
+
+.drawBorder{
+    @include borderTopBottom(2px);
+}
+
+.borderRight{
+    @include borderLeftOrRight($lightcolor);
+}
+
+.borderLeft{
+    @include borderLeftOrRight($darkgrey);
+}
+
+.borderTop{
+    @include borderTop(2px);
+}
+
+.borderBottom{
+    @include borderBottom(2px);
+}
+
+.dashBorder{
+    @include dashedBorder();
+    width: 114px;
+    padding-top: 8px;
+}
+//end borders
+
+// @mixin contentText(){
+//     font-family: $avenir;
+//     font-size: 18px;
+// }
+
+@mixin buttonDesign ($color) {
+    padding: 15px !important;
+    text-transform: uppercase !important;
+    font-family: $impact !important;
+    border-radius: 0 !important;
+    font-size: 20px !important;
+
+    @if ($color == $darkgrey) {
+        background-color: $color !important;
+        color: $lightcolor !important;
+        
+    } @else if ($color == $lightcolor) {
+        background-color: $color !important;
+        @include borderDesign(4px);
+        color: $darkgrey !important;
+        
+    } @else {
+        background-color: $darkgrey !important;
+        border: 4px $lightcolor solid;
+        color: $lightcolor !important;
+        
+    }
+
+}
+
+@mixin flexOn ($justify-content, $wrap){
+    display: flex !important;
+    justify-content: $justify-content !important;
+    align-items: center !important;
+    flex-wrap: $wrap;
+
+    // @if (justify-content == space-between){
+    //     gap: $gap;
+    // } @else {
+    //     gap: 0;
+    // }
+}
+
+@mixin addImageToDiv($height) {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    // width: 100vw;
+    height: $height;
+    
+}
+
+
+@mixin contentText(){
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+@mixin fadedText {
+    font-family: 'Avenir';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.borderTopBottom{
+    @include borderTopBottom(2px);
+}
+
+.text{
+    @include contentText();
+    margin-bottom: $margin2x !important;
+}
+
+.fadedText{
+    @include fadedText();
+    color: $darkgrey;
+    opacity: 0.6;
+}
+
+
+//STANDARD TAGS
+
+body{
+    background-color: $lightcolor !important;
+    overflow-x: hidden !important;
+}
+
+a{
+    text-decoration: none;
+    :hover{
+        color: $red !important;
+        text-decoration-color: $red !important; 
+    }
+}
+
+.neutralLink{
+    @include neutralLink($darkgrey);
+}
+
+.neutralLink:hover{
+    @include neutralLink($red);
+}
+
+ul{
+    list-style-type: none;
+}
+
+p{
+    margin-bottom: 0 !important;
+    @include contentText();
+}
+
+h1{
+    font-size: $h1-fontsize !important;
+    font-family: $impact;
+    text-transform: uppercase !important;
+    color: $darkgrey;
+}
+
+h2{
+    font-size: $h2-fontsize !important;
+    font-family: $impact;
+    // text-transform: uppercase !important;
+    color: $darkgrey;
+}
+
+h3{
+    font-size: $h3-fontsize !important;
+    font-family: $impact;
+    text-transform: uppercase !important;
+    color: $darkgrey;
+    margin-bottom: $marginX !important;
+}
+
+h4{
+    font-size: $h4-fontsize !important;
+    font-family: $impact;
+    text-transform: uppercase !important;
+    color: $darkgrey;
+    margin: 0 !important;
+}
+
+h5{
+    font-size: $h5-fontsize !important;
+    font-family: $impact;
+    text-transform: uppercase !important;
+    color: $darkgrey;
+    margin: 0 !important;
+    letter-spacing: 0.1em; 
+}
+
+h6{
+    font-size: $h6-fontsize !important;
+    font-family: $impact;
+    text-transform: uppercase !important;
+    color: $darkgrey;
+    margin: 0 !important;
+}
+
+span{
+    padding: 0px 10px;
+}
+
+.lightText{
+    color: $lightcolor;
+}
+
+// //NAVBAR
+.navbar{
+    background-color: $lightcolor !important;
+    padding-bottom: 0 !important;
+    @include borderBottom(4px);
+    padding-top: 42px !important;
+}
+
+.border-draw{
+    --bs-gutter-x: 0px !important;
+    padding-bottom: 32px;
+    @include borderBottom(0px);
+}
+
+// .flexNav{
+//     @include flexOn(space-evenly, wrap);
+//     margin-top: 24px !important;
+
+// }
+
+.burgerAndPhone{
+    @include flexOn(center, wrap);
+    a{
+        text-decoration: none;
+        color: $darkgrey;
+    }
+            .flexPhoneIcon{
+                @include flexOn(flex-start, wrap);
+                .phoneIcon{
+                    margin-right: $iconMargin;
+        }
+}
+}
+
+
+
+// .logoImg{
+//     width: 150px;
+// }
+
+// }
+// .navbar{
+//     border-bottom: 4px $darkgrey solid !important;
+// }
+
+.navbar-toggler{
+    @include borderDesign(0px);
+    margin-right: 42px;
+    transition: none !important;
+    border-radius: none !important;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+
+
+//OFFCANVAS
+.offcanvas{
+    background-color: $lightcolor !important;
+}
+
+.offcanvas-header{
+    margin-top: 40px !important;
+}
+
+.btn-close{
+    width: 48px !important;
+}
+
+.offcanvas-flex{
+    @include flexOn(flex-start,nowrap );
+    gap: 8px;
+    margin-bottom: $margin3x;
+}
+
+.navbar-nav{
+    margin-top: $margin3x !important;
+    margin-bottom: $margin3x !important;
+    .nav-link{
+        font-size: 32px !important;
+        text-transform: uppercase !important;
+        font-family: $impact !important;
+    }
+}
+
+.offcanvas-phone{
+    font-size: 20px !important;
+}
+
+
+//BUTTONS
+.btn{
+    @include buttonDesign($darkgrey);
+    width: 230px !important;
+}
+
+.btn:hover{
+    background-color: $red !important;
+    color: $lightcolor !important;
+}
+//     background-color: $darkgrey !important;
+//     color: $lightcolor !important;
+
+
+// .btn-hide{
+//     @include hideElement();
+// }
+
+.btnLight{
+    @include buttonDesign($lightcolor);
+    width: 230px !important;
+}
+
+.btnLight:hover{
+    background-color: $darkgrey !important;
+    color: $lightcolor !important;
+}
+
+.btnLightBorder{
+    @include buttonDesign(#ffffff);
+    width: 230px !important;
+    
+}
+
+.btnLightBorder:hover{
+    background-color: $red !important;
+    color: $lightcolor !important;
+    border: $red 4px solid;
+}
+
+// BANNER
+.banner{
+    background-image: url('../img/index/banner1.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
+    // width: 100vw;
+    // height: 744px;
+    @include borderTop(2px);
+    @include addImageToDiv(744px);
+    @include flexOn(flex-end, nowrap );
+    flex-direction: column;
+    .bannerTextFlex{
+        @include flexOn(center,nowrap );
+        // align-content: flex-end !important;
+        flex-direction: column;
+        .firstRowFlex{
+            @include flexOn(center,nowrap );
+            gap: 16px;
+        }
+        .word1, .word2, .word3{
+            background-color: $darkgrey;
+            padding: 4px 32px;
+            h1{
+                color: $lightcolor;
+            }
+        }
+    }
+    .word3{
+        margin-top: $marginX;
+        margin-bottom: $margin2x;
+    }
+
+    .bannerIcons{
+        @include flexOn(center, nowrap);
+        gap: 48px;
+        margin-bottom: 48px;
+    }
+
+}
+
+
+
+
+
+
+
+
+// Home page sections
+
+.becomeStarImg2{
+    @include addImageToDiv(539px);
+    background-image: url('../img/index/becomestar2.png');
+}
+
+.whoWeAreImg3{
+    @include addImageToDiv(539px);
+    background-image: url('../img/index/whoweare3.png');
+}
+
+
+//GALLERY
+// .ourWorks{
+//     // @include borderTop(2px);
+//     // padding-bottom: 72px;
+// }
+
+.gallery1, .gallery2, .robbiePort1, .robbiePort2{
+    @include borderTopBottom(4px)
+}
+
+.gallery1{
+    background-image: url('../img/index/gallery1.png');
+    @include addImageToDiv(744px);
+    @include borderRight(2px)
+}
+
+.gallery2{
+    background-image: url('../img/index/gallery2.png');
+    @include addImageToDiv(744px);
+    @include borderLeft(2px)
+}
+
+.galleryFlex{
+    @include flexOn(center,wrap );
+    position: relative;
+    top: -40px;
+}
+
+.slider{
+    @include borderDesign(4px);
+    @include flexOn(space-between,wrap );
+    width: 330px !important;
+    height: 76px;
+    background-color: $lightcolor !important;
+    padding: 0 !important;
+    .arrowLeft{
+        @include flexOn(center,nowrap );
+        @include borderRight(4px);
+        width: 72px;
+        height: 72px;
+        
+    }
+
+    .sliderCount{
+        @include flexOn(center,nowrap );
+    }
+
+    .arrowRight{
+        @include flexOn(center,nowrap );
+        @include borderLeft(4px);
+        width: 72px;
+        height: 72px;
+    }
+}
+
+
+
+// TESTIMONIALS
+.testimonials{
+    margin-top: 128px !important;
+    padding-bottom: 48px;
+    .borderLeftTest{
+        border-left: #333333 4px solid;
+        padding-left: 42px !important;
+        margin-top: $margin2x;
+    }
+    
+    .testimonial{
+        // margin-top: 32px;
+        margin-bottom: 24px !important;
+        @include contentText();
+    }
+    
+    .personName{
+        font-family: 'Avenir';
+        font-style: italic;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 27px;
+        text-transform: uppercase;
+    }
+}
+
+.switchers{
+    @include flexOn(flex-start, nowrap);
+    gap: 28px !important;
+    .numbers{
+        font-family: 'Impact';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        // letter-spacing: 0.25em;
+        text-transform: uppercase;
+    }
+    // .arrowRight{
+    //     transform:rotate(180deg);
+    // }
+    margin-bottom: 128px;
+}
+
+//Meet Team Img
+.meetTeamImg{
+    @include addImageToDiv(539px);
+    background-image: url('../img/index/meetteam.png');
+}
+
+
+// CONTACTS
+
+.contactInfo{
+    margin-top: $marginX;
+    a{
+        @include neutralLink($darkgrey);
+    }
+    .contactTextIcon{
+        margin-bottom: $marginX2;
+    }
+    .flexPhoneIcon{
+        // @include hideElement($lg-size);
+        // @include hideElement($sm-size);
+        // @include hideElement($xs-size);
+        @include flexOn(flex-start, wrap);
+        .phoneIcon{
+            margin-right: $iconMargin;
+        }
+    }
+    .textFrame{
+        @include flexOn(center, wrap);
+        .textFrameWrapper{
+            width: 380px;
+        }
+    }
+}
+
+.marginTop{
+    margin-top: $marginX;
+}
+
+.standardImage{
+    // padding: 0 !important;
+    @include addImageToDiv(url("../img/map.png"));
+    height: $usualImgHeight;
+    // @include borderDesign(2px);
+}
+
+.textFrame{
+    @include flexOn(center, wrap);
+    padding: 72px 0px;
+    .textFrameWrapper{
+        width: 350px;
+    }
+}
+
+.container, .container-fluid{
+    --bs-gutter-x: 0 !important;
+}
+
+//BOOK AN APPOINTMENT
+.row{
+    --bs-gutter-x: 0 !important;
+}
+
+
+.bookAndButton{
+    padding: $margin3x 0px !important;
+    overflow-x: hidden !important;
+    // padding-bottom: $margin4x;
+    // @include borderTop(2px);
+    .bookAppointTitle{
+        // position: relative;
+        @include flexOn(center, nowrap);
+        gap: 32px;
+        .bookFlexShrink{
+            flex-shrink: 0;
+            overflow-x: hidden;
+        }
+    }
+        .redStarIcon{
+            padding-bottom: 8px;
+        }
+    .appointButton{
+        @include flexOn(center, nowrap);
+        margin-top: $margin3x;
+    }
+}
+
+
+//FOOTER
+footer{
+    background-color: $darkgrey;
+    .logolight{
+        margin-top: $margin4x;
+        padding-top: $margin4x;
+        @include flexOn(center,nowrap);
+    }
+    
+    .footerButton{
+        margin-top: $margin3x;
+        @include flexOn(center,nowrap);
+    }
+
+    .footerMenu{
+        @include flexOn(space-between,nowrap);
+        margin-top: 96px;
+        padding-bottom: 32px;
+        .footerList{
+            @include ulItems(flex-start);
+            .footerLink{
+                color: $lightcolor !important;
+                @include contentText();
+            }
+            a{
+                text-decoration: none;
+            }
+        }
+
+        .footerIcons{
+            @include flexOn(flex-end,nowrap);
+            gap: 32px;
+        }
+
+    }
+    
+}
+
+//testborders
+.borderSides{
+    @include borderRight(4px);
+    @include borderLeft(4px);
+}
+
+.borderRight{
+    @include borderRight(4px)
+}
+
+.borderBottom{
+    @include borderBottom(4px);
+}
+
+
+//Tablet -- LG 992
+
+@media screen and (max-width: $lg-size){
+    .hide{
+        display: none !important;
+    }
+
+    body{
+        overflow-x: hidden !important;
+    }
+
+    h1{
+        font-size: 36px;
+    }
+
+
+    .borderSides{
+        @include borderRight(0px);
+        @include borderLeft(0px);
+    }
+
+    .borderRight{
+        @include borderRight(0px);
+        @include borderLeft(0px);
+    }
+    
+    // .hiddenLink{
+    //     display: none !important;
+    // }
+    // .btn-hide {
+    //     display: none !important;
+    // }
+
+    //NAV
+    .mediaFlex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logoSize{
+        width: 170px;
+    }
+
+    //BANNER
+    .banner{
+        flex-shrink: 1;
+    }
+
+    .firstRowFlex{
+        display: block;
+        .word2{
+            flex-shrink: 0;
+        }
+    }
+
+    .bannerIcons{
+        display: none !important;
+    }
+
+    
+
+    //TESTIMONIAL
+    .testimonial{
+        padding-right: 12px;
+    }
+
+    .noPadding{
+        padding: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    // .borderLeft{
+    //     border: hwb(0 20% 80% / 0) 0px solid !important;
+    // }
+
+    //CONTACTS 
+    .textFrameWrapper{
+        padding: 90px 12px 90px 0;
+    }
+
+    //BOOK AN APPOINTMENT
+    // .bookAppointTitle{
+    //     // flex-shrink: 0;
+    // }
+    
+    .order-md-first{
+        @include borderBottom(4px);
+    }
+
+    .bookFlexShrink{
+        flex-shrink: 0;
+        overflow-x: hidden;
+    }
+
+
+    //FOOTER
+    footer{
+        // padding: 90px 0px 60px 0px;
+        .footerMenu{
+            @include flexOn(center, nowrap );
+            flex-direction: column !important;
+            // .footerLink{
+            //     font-size: 14px !important;
+            // }
+            .footerList{
+                padding-left: 0 !important;
+            }
+        }
+        .footerIcons{
+            margin-top: 48px;
+        }
+    } 
+    
+    .serviceImage{
+        display: none;
+    }
+
+    //About
+    .stylistMobTitle{
+        padding: 16px 12px !important;
+        @include flexOn(space-between,nowrap );
+        .stylistTitle{
+            color: $darkgrey;
+        }
+    }
+
+    .stylist2, .stylist3, .stylist4, .stylist5, .stylist6{
+        display: none;
+        .stylistMobTitle{
+            display: none;
+            // padding: 0px 12px !important;
+        }
+    }
+
+    // .stylistsSliderMob{
+    //     top: 0;
+    //     margin-top: 16px;
+    // }
+}
+
+//Medium MD 768
+
+//fiv services w prices
+@media screen and (max-width: $md-size) {
+    body{
+        overflow-x: hidden !important;
+    }
+
+    h1{
+        font-size: 64px;
+    }
+
+    .btn, .btnLight, .btnLightBorder{
+        width: 100% !important;
+    }
+
+    footer{
+        padding: 0px 12px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+
+    .service{
+        width: 350px !important;
+        .dashBorder{
+            width: 86px;
+        }
+    } 
+
+    .servicesMenu{
+        justify-content: flex-start !important;
+        .bookAppointTitle{
+            justify-content: flex-start !important;
+            overflow-x: hidden;
+        }
+    }
+
+    .servicesCancellation{
+        margin-top: 56px !important;
+    }
+}
+
+
+//Mobile XS 576
+@media screen and (max-width: $xs-size) {
+    body{
+        overflow-x: hidden !important;
+    }
+
+    h1{
+        font-size: 52px !important;
+    }
+
+    h3{
+        font-size: 36px !important;
+    }
+
+    .banner, .gallery1{
+        height: 500px;
+    }
+
+    .paddingSides{
+        padding: 0px 12px;
+    }
+
+    .testimonials{
+        margin-top: 90px;
+    }
+
+    .borderLeftTest{
+        @include borderLeft(0px);
+    }
+
+    .switchers{
+        margin-left: 12px;
+    }
+
+    .borderSides{
+        @include borderRight(0px);
+        @include borderLeft(0px);
+    }
+    
+    .borderRight{
+        @include borderRight(0px)
+    }
+
+    //FOOTER
+    footer{
+        .footerList{
+            @include flexOn(center, nowrap );
+            flex-direction: column;
+            padding-left: 0 !important;
+        }
+    }
+
+    .service{
+        width: 350px;
+    }
+
+    .dashBorder{
+        width: 96px;
+    }
+
+    //Services
+
+    .servicesWrapper{
+        width: 350px;
+    }
+
+    .servicesMenu{
+        justify-content: flex-start !important;
+        .bookAppointTitle{
+            @include flexOn(flex-start,nowrap );
+            overflow-x: hidden;
+            padding-left: 60px !important;
+        }
+    }
+
+    //About
+
+    .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6{
+        height: 410px !important;
+    }
+    
+}
+
+
+
+
+// SERVICES
+.servicesMenu{
+    padding: 48px 0px;
+    .bookAppointTitle{
+        // position: relative;
+        @include flexOn(center, nowrap);
+        gap: 72px;
+        flex-shrink: 0 !important;
+        padding-left: 12px;
+}
+}
+
+.serviceSection{
+    margin-top: $margin3x;
+}
+
+
+
+
+//Services w prices
+.servicesWrapper{
+    margin: 72px 0px;
+    width: 420px;
+    @include flexOn(flex-start, wrap);
+    flex-direction: column;
+    align-items: flex-start !important;
+}
+
+.servicesList{
+    padding-left: 0 !important;
+}
+
+.service{
+    @include flexOn(space-between, nowrap );
+    width: 420px;
+}
+
+.priceFlex{
+    @include flexOn(space-between, nowrap);
+    gap: 32px;
+}
+
+.serviceItem{
+    margin-top: $marginX2;
+}
+
+.fadedDetails{
+    margin: 24px 0px;
+}
+
+.serviceImage1{
+    background-image: url('../img/services/1.png');
+    @include addImageToDiv(350px);
+}
+
+.serviceImage2{
+    background-image: url('../img/services/2.png');
+    @include addImageToDiv(350px);
+}
+
+.serviceImage3{
+    background-image: url('../img/services/3.png');
+    @include addImageToDiv(350px);
+}
+
+
+
+// Policy
+.servicesPolicy{
+    padding: 72px 0px;
+}
+
+.policies{
+    margin-top: 24px;
+    .policyItem{
+        padding-bottom: 8px;
+    }
+}
+
+.policyMargin{
+    margin-top: 24px;
+    width: 450px;
+}
+
+.policyMiddleMargin{
+    margin-top: 56px !important;
+}
+
+
+// ABOUT
+.studioImg{
+    @include addImageToDiv(536px);
+    background-image: url('../img/about/studio.png');
+}
+
+.ownerText{
+    margin-bottom: $marginX2 !important;
+    font-family: 'Avenir';
+    // font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 27px;
+    text-transform: uppercase;
+}
+
+.ownerImg{
+    @include addImageToDiv(536px);
+    background-image: url('../img/about/owner.png');
+}
+
+
+
+// Stylists
+
+.stylistRobbie{
+    background-image: url(../img/robbie.png);
+    background-color: #333333a5;
+    @include addImageToDiv(561px);
+    @include flexOn(center, wrap );
+    .textFrameWrapper{
+        @include flexOn(flex-start, wrap );
+        width: 400px;
+    }
+    .stylistRobbie:hover{
+        background-image: url(../img/robbie-hovered.png);
+    }
+}
+
+.stylistTitle{
+    color: $lightcolor;
+}
+
+.textStylist{
+    color: $lightcolor;
+}
+
+.stylistInfoLink{
+    color: $lightcolor;
+    text-decoration: underline;
+    text-decoration-color: $lightcolor;
+    margin-top: $margin3x;
+}
+
+.stylist2, .stylist3, .stylist4, .stylist5, .stylist6{
+    @include addImageToDiv(561px);
+}
+
+.stylist2{
+    background-image: url('../img/about/stylist2.png');
+}
+
+.stylist3{
+    background-image: url('../img/about/stylist3.png');
+}
+
+.stylist4{
+    background-image: url('../img/about/stylist4.png');
+}
+
+.stylist5{
+    background-image: url('../img/about/stylist5.png');
+}
+
+.stylist6{
+    background-image: url('../img/about/stylist6.png');
+}
+
+.stylistMobTitle{
+    display: none;
+}
+
+// FORM
+form{
+    margin-top: $margin4x;
+}
+
+.form-label{
+    margin-top: $marginX;
+}
+
+.form-control, .form-select {
+    @include borderDesign(2px);
+    border-radius: 0 !important;
+    @include contentText();
+    background-color: $lightcolor;
+    height: 52px;
+}
+
+.form-check-input:checked {
+    background-color: $red !important;
+    border: 2px solid;
+    border-color: $darkgrey !important;
+    }
+
+#message{
+    height: 156px;
+    margin-bottom: $margin3x;
+}
+
+#sendTheForm{
+    margin-bottom: $margin4x;
+}
+
+.form-check-label{
+    @include contentText();
+}
+
+
+
+// STAFF
+.stylistBio{
+    padding: 72px 0px;
+    .stylistBioLink{
+        opacity: 0.7;
+        .stylistBioInst{
+            font-style: italic !important;
+        }
+        .stylistBioText{
+            //figure out
+            margin-top: 32px !important;
+        }
+
+    }
+    
+}
+
+.robbieStaffImg{
+    @include addImageToDiv(690px);
+    background-image: url('../img/staff/robbie.png');
+    background-position: top !important;
+}
+
+.robbiePort1{
+    @include addImageToDiv(690px);
+    background-image: url('../img/staff/work1.png');
+    background-position: top !important;
+}
+
+.robbiePort2{
+    @include addImageToDiv(690px);
+    background-image: url('../img/staff/work2.png');
+    background-position: top !important;
+}
+
+
+//THANK YOU PAGE
+.conf{
+    background-color: $darkgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.confDetails{
+    padding: 72px 32px;
+    width: 470px;
+}
+
+.confirmSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: $marginX;
+}
+
+
+
+//POPUPS
+.confirmBox{
+    @include flexOn(center, nowrap);
+}
+
+.confTextFlex{
+    @include flexOn(flex-start,nowrap);
+    gap: 12px;
+    .confTitle{
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        text-transform: uppercase;
+        opacity: 0.7;
+    }
+    .confData{
+        @include contentText();
+    }
+}
+
+.dateTimeFlex{
+    display: flex;
+    gap: 24px;
+}
+
+
+//visibility
+.invisible{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

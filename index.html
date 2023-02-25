@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <!-- NAV -->
+    <!-- <nav>
+    <div class="container ">
+        <div class="row flexNav border">
+
+ 
+            <div class="burgerAndPhone">
+            <a href="" class="navBurgerLink">
+                <img src="img/navburger.svg" alt="" class="burgerIcon">
+            </a>
+            <a href="" class="phoneIcon"></a>
+            <div class="flexPhoneIcon">
+                <img src="img/phone.svg" alt="" class="phoneIcon">
+                <p>+1 (999) 999-9999</p>
+            </div>
+            </a>
+        </div>
+        
+
+        <div class="logo">
+            <a href="index.html" class="logoLink">
+                <img src="img/logo.svg" alt="" class="logoImg">
+            </a>
+        </div>
+
+
+        <button type="button" class="btn btn-dark">Book an appointment</button>
+
+        </div>
+    </div>
+</nav> -->
+
+<nav class="navbar">
+    <div class="container mediaFlex border-draw">
+        <div class="burgerAndPhone">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <img src="img/navburger.svg" alt="">
+        <!-- <span class="navbar-toggler-icon"></span> -->
+      </button>
+      <a href="" class="hide">
+            <div class="flexPhoneIcon">
+                <img src="img/phone.svg" alt="" class="phoneIcon">
+                <p class="phoneIcon">
+                    <a class="neutralLink hide" href="">+1 (999) 999-9999</a>
+                </p>
+            </div>
+            </a>
+        </div>
+                
+        <!-- OFFCANVAS HERE -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <div class="logo offcanvas-title">
+                <a href="index.html" class="logoLink">
+                    <img src="img/logo.svg" alt="" class="logoSize">
+                </a>
+              </div>
+          <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> -->
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACTS</a>
+              </li>
+          </ul>
+          <div class="flexPhoneIcon offcanvas-flex">
+            <img src="img/phone.svg" alt="" class="phoneIcon">
+            <p class="phoneIcon offcanvas-phone">
+                <a class="neutralLink" href="">+1 (999) 999-9999</a>
+            </p>
+        </div>
+            <button class="btn">Book an appointment</button>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="logo">
+        <a href="" class="logoLink">
+            <img src="img/logo.svg" alt="" class="logoSize">
+        </a>
+      </div>
+
+      <!-- Book an Appointment Button -->
+      <div class="bookAppoint hide">
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#bookAppointForm">Book an appointment</button>
+      </div>
+    </div>
+
+
+    <!-- POPUP -->
+    
+    <!-- <div class="modal-dialog modal-dialog-centered" id="bookAppointForm">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <label for="fullName" class="form-label">
+                            <h6>Full Name</h6>
+                         </label>
+                         <input type="text" id="fullName" class="form-control" placeholder="Enter your name">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div> -->
+
+
+  </nav>
+
+  <!-- BANNER -->
+  <div class="banner drawBorder">
+    <div class="bannerTextFlex">
+        <div class="firstRowFlex">
+        <div class="word1">
+            <h1>impress</h1>
+        </div>
+        <div class="word2">
+            <h1>with your</h1>
+        </div>
+    </div>
+    <div class="word3">
+        <h1>hairstyle</h1>
+    </div>
+</div>
+
+<!-- social media -->
+<div class="bannerIcons hide">
+    <a href="" class="bannerIconLink">
+    <img src="img/bannerinst.svg" alt="" class="bannerIcon">
+    </a>
+    <a href="" class="footerIconLink">
+    <img src="img/bannerfb.svg" alt="" class="bannerIcon">
+    </a>
+    <a href="" class="footerIconLink">
+    <img src="img/bannerpint.svg" alt="" class="bannerIcon">
+    </a>
+</div>
+  </div>
+
+<!-- INTRO TITLE -->
+  <div class="row introTitle borderTop" style="padding: 0 !important;">
+    <div class="bookAndButton">
+      <div class="bookAppointTitle">
+          <h1 class="bookFlexShrink">yoshi hair</h1>
+          <img src="img/redstar.svg" alt="" class="redStarIcon">
+          <h1 class="bookFlexShrink">the best hair studio based in la</h1>
+          <img src="img/redstar.svg" alt="" class="redStarIcon">
+          <h1 class="bookFlexShrink">yoshi hair</h1>
+          <img src="img/redstar.svg" alt="" class="redStarIcon">
+          <h1 class="bookFlexShrink">the best hair studio based in la</h1>
+          <img src="img/redstar.svg" alt="" class="redStarIcon">
+      </div>
+  </div>
+  </div>
+
+<!-- BECOME A STAR & ABOUT US -->
+  <div class="row drawBorder"></div>
+    <!-- BECOME A STAR -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 borderSides borderBottom textFrame">
+                <div class="textFrameWrapper">
+                <h3>Become a star</h3>
+                <p class="text">Lorem ipsum dolor sit amet consectetur. Sociis vehicula scelerisque sed at integer non elementum sed neque. Risus massa arcu ipsum tortor. </p>
+                <button class="btnLight">See services</button>
+            </div>
+            </div>
+            <div class="col-xl-6 standardImage borderBottom borderRight becomeStarImg2">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- MEET OUR TEAM -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xl-6 standardImage borderSides order-last order-md-last order-xl-first whoWeAreImg3">
+                <!-- <div style="width: 100%"><iframe width="100%" height="455" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=455&amp;hl=en&amp;q=333%20Terminal%20Ave,%20Vancouver+(Yoshi%20Hair%20Stusio)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure area map</a></iframe></div> -->
+            </div>
+            <div class="col-12 col-xl-6 borderRight textFrame order-first order-md-first order-xl-last ">
+                <div class="textFrameWrapper">
+                    <h3>Meet our team</h3>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur. Sociis vehicula scelerisque sed at integer non elementum sed neque. Risus massa arcu ipsum tortor. </p>
+                    <button class="btnLight">See our team</button>
+                </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="row drawBorder"></div>
+  <!-- PORTFOLIO -->
+  <div class="row ourWorks">
+  <div class="bookAndButton">
+    <div class="bookAppointTitle">
+        <h1 class="bookFlexShrink">Our works</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+        <h1 class="bookFlexShrink">Portfolio</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+        <h1 class="bookFlexShrink">Our works</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+        <h1 class="bookFlexShrink">Portfolio</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+    </div>
+</div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-xl-6 gallery1"></div>
+        <div class="col-12 col-md-6 col-xl-6 gallery2 hide"></div>
+    </div>
+
+    <!-- Sliders -->
+    <div class="row galleryFlex">
+     <div class="slider">
+        <div class="arrowLeft">
+            <img src="img/arrowleft.svg" alt="" style="height: 26px;">
+        </div>
+        <div class="sliderCount">
+            <h4>1 <span>/</span> 10</h4>
+        </div>
+        <div class="arrowRight">
+            <img src="img/arrowleft.svg" alt="" style="transform: rotate(180deg); height: 26px;">
+        </div>
+     </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+    <!-- TESTIMONIALS -->
+    <div class="container">
+    <div class="row testimonials">
+        <div class="col-xl-3">
+        </div>
+        <div class="row">
+            <div class="col-xl-3"></div>
+            <div class="col-xl-6">
+                <h3>Testimonials</h3>
+            </div>
+            <div class="col-xl-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3"></div>
+        <div class="col-xl-6 borderLeftTest noPadding">
+            <p class="testimonial">Lorem ipsum dolor sit amet consectetur. Justo mi amet gravida faucibus ut consectetur dignissim. Vitae interdum leo augue gravida habitant. Sed integer tristique quisque id cras viverra bibendum scelerisque accumsan. Purus vel ultricies magna morbi.</p>
+            <p class="personName">– Laura Hash</p>
+        </div>
+        <div class="col-xl-3"></div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-xl-3 "></div>
+        <div class=" col-12 col-xl-6 ">
+        <div class="switchers">
+            <div class="arrowLeft">
+                <img src="img/arrowleft.svg" alt="" style="height: 20px;">
+            </div>
+            <div class="numbers">1<span>/</span>5</div>
+            <!-- <div class="arrowRight">
+                <img src="img/arrow-left.svg" alt="">
+            </div> -->
+            <div class="arrowRight">
+                <img src="img/arrowleft.svg" alt="" style="transform: rotate(180deg); height: 20px;">
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 "></div>
+    </div>
+</div>
+
+
+
+<div class="row drawBorder"></div>
+    <!-- MEET OUR TEAM -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 borderSides borderBottom textFrame">
+                <div class="textFrameWrapper">
+                <h3>Meet our team</h3>
+                <p class="text">Lorem ipsum dolor sit amet consectetur. Sociis vehicula scelerisque sed at integer non elementum sed neque. Risus massa arcu ipsum tortor. </p>
+                <button class="btnLight">See our team</button>
+            </div>
+            </div>
+            <div class="col-xl-6 standardImage borderBottom borderRight meetTeamImg"></div>
+        </div>
+
+    </div>
+
+
+    <!-- CONTACTS -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xl-6 borderSides noPadding order-last order-md-last order-xl-first" style="padding: 0 !important;">
+                <div style="width: 100%"><iframe width="100%" height="455" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=455&amp;hl=en&amp;q=333%20Terminal%20Ave,%20Vancouver+(Yoshi%20Hair%20Stusio)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure area map</a></iframe></div>
+            </div>
+            <div class="col-12 col-xl-6 borderRight textFrame order-first order-md-first order-xl-last ">
+                <div class="textFrameWrapper">
+                <h3>Contact Us</h3>
+                <div class="contactInfo">
+                <a href="" class="contactLink">
+                <div class="contactTextIcon">
+                    <div class="flexPhoneIcon">
+                <img src="img/phone.svg" alt="" class="phoneIcon">
+                <p class="phoneIcon">+1 (999) 999-9999</p>
+            </div>
+                </div>
+            </a>
+            <a href="" class="contactLink">
+                <div class="contactTextIcon">
+                    <div class="flexPhoneIcon">
+                <img src="img/email.svg" alt="" class="phoneIcon">
+                <p class="phoneIcon">yoshihair@email.com</p>
+            </div>
+                </div>
+            </a>
+            <a href="" class="contactLink">
+                <div class="contactTextIcon">
+                    <div class="flexPhoneIcon">
+                <img src="img/location.svg" alt="" class="phoneIcon">
+                <p class="phoneIcon">333 Terminal Ave, Los Angeles, CA</p>
+            </div>
+                </div>
+            </a>
+            </div>
+            <button class="btnLight marginTop">Contact Us</button>
+        </div>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="row drawBorder"></div>
+    <!-- BOOK AN APPOINTMENT -->
+    <div class="bookAndButton">
+    <div class="bookAppointTitle">
+        <h1 class="bookFlexShrink">book your best hairstyle</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+        <h1 class="bookFlexShrink">yoshi does magic</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+        <h1 class="bookFlexShrink">book your best hairstyle</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+        <h1 class="bookFlexShrink">yoshi does magic</h1>
+        <img src="img/redstar.svg" alt="" class="redStarIcon">
+    </div>
+    <div class="appointButton">
+    <button class="btn" style="font-size: 26px !important; width: 350px !important;">Book an appointment</button>
+</div>
+</div>
+
+    <!-- FOOTER -->
+    <footer>
+        <!-- logo -->
+        <div class="logo logolight">
+            <a href="" class="logoLink">
+                <img src="img/logolight.svg" alt="">
+            </a>
+          </div>
+
+          <!-- button -->
+          <div class="footerButton">
+          <button class="btnLightBorder">Back to top</button>
+        </div>
+
+        <div class="container footerMenu">
+            <ul class="footerList">
+                <li class="footerItem">
+                    <a href="" class="footerLink">Legal & Policy</a>
+                </li>
+                <li class="footerItem">
+                    <a href="" class="footerLink">Sitemap</a>
+                </li>
+                <li class="footerItem">
+                    <a href="" class="footerLink">Cookies</a>
+                </li>
+            </ul>
+
+            <div class="footerIcons">
+                <a href="" class="footerIconLink">
+                <img src="img/footersm1.svg" alt="" class="footerIcon">
+                </a>
+                <a href="" class="footerIconLink">
+                <img src="img/footersm2.svg" alt="" class="footerIcon">
+                </a>
+                <a href="" class="footerIconLink">
+                <img src="img/footersm3.svg" alt="" class="footerIcon">
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- <div class="test">
+        <ul class="testFlex">
+            <li>Some stuff</li>
+            <li>Some stuff</li>
+            <li>Some stuff</li>
+        </ul>
+    </div> -->
+
+</body>
+</html>

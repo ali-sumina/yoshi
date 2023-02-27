@@ -420,6 +420,10 @@ span{
 }
 
 // BANNER
+.bannerTextMob{
+    display: none;
+}
+
 .banner{
     background-image: url('../img/index/banner1.jpg');
     // background-repeat: no-repeat;
@@ -431,12 +435,18 @@ span{
     @include addImageToDiv(744px);
     @include flexOn(flex-end, nowrap );
     flex-direction: column;
+    margin-top: 158px;
     .bannerTextFlex{
-        @include flexOn(center,nowrap );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // @include flexOn(center,nowrap );
         // align-content: flex-end !important;
         flex-direction: column;
         .firstRowFlex{
-            @include flexOn(center,nowrap );
+            display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 16px;
         }
         .word1, .word2, .word3{
@@ -645,7 +655,7 @@ span{
 
 
 .bookAndButton{
-    padding: $margin3x 0px !important;
+    padding: $margin4x 0px $margin3x !important;
     overflow-x: hidden !important;
     // padding-bottom: $margin4x;
     // @include borderTop(2px);
@@ -771,7 +781,7 @@ footer{
     }
 
     .firstRowFlex{
-        display: block;
+        display: block !important;
         .word2{
             flex-shrink: 0;
         }
@@ -800,7 +810,7 @@ footer{
 
     //CONTACTS 
     .textFrameWrapper{
-        padding: 90px 12px 90px 0;
+        padding: 32px 12px 32px 0;
     }
 
     //BOOK AN APPOINTMENT
@@ -875,6 +885,10 @@ footer{
         font-size: 64px;
     }
 
+    p{
+        font-size: 16px;
+    }
+
     .btn, .btnLight, .btnLightBorder{
         width: 100% !important;
     }
@@ -887,6 +901,62 @@ footer{
         font-size: 20px;
     }
 
+    .testimonialTitle{
+        padding-left: 12px;
+    }
+
+    .visible-md{
+        display: block;
+    }
+
+    .hide-md{
+        display: none !important;
+    }
+
+    .banner{
+        margin-top: 0;
+    }
+
+    .bannerTextMob{
+        margin-top: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $darkgrey;
+        .firstRowFlex{
+        @include flexOn(center,nowrap );
+        flex-direction: column;
+        .word1, .word2{
+            background-color: $darkgrey;
+            padding: 4px 16px;
+            h1{
+                color: $lightcolor !important;
+            }
+        }
+    }
+    .word3{
+            padding: 4px 32px;
+            h1{
+                color: $lightcolor !important;
+            }
+    }
+}
+
+    .bookAndButton{
+        padding: $margin3x 0px $margin2x !important;
+    }
+
+    .servicesPolicy{
+        padding: 48px 12px !important;
+    }
+
+    .servicesWrapper{
+        padding: 0px 12px;
+        .serviceType{
+            margin-bottom: 24px;
+        }
+    }
 
     .service{
         width: 350px !important;
@@ -935,6 +1005,10 @@ footer{
         margin-top: 90px;
     }
 
+    // .textFrame{
+    //     padding: 48px 0px;
+    // }
+
     .borderLeftTest{
         @include borderLeft(0px);
     }
@@ -954,6 +1028,9 @@ footer{
 
     //FOOTER
     footer{
+        .logolight{
+            margin-top: 12px;
+        }
         .footerList{
             @include flexOn(center, nowrap );
             flex-direction: column;
@@ -970,9 +1047,13 @@ footer{
     }
 
     //Services
+    // .servicesSection{
+    //     margin-top: 135px !important;
+    // }
 
     .servicesWrapper{
         width: 350px;
+        margin: 0px !important;
     }
 
     .servicesMenu{
@@ -986,13 +1067,25 @@ footer{
 
     //About
 
-    .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6{
+    .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6, .standardImage{
         height: 410px !important;
     }
+
+    //CONTACT
+    .formPadding{
+        padding: 0px 12px !important;
+    }
+
+    // .introTitle{
+    //     margin-top: 135px;
+    // }
     
 }
 
 
+.marginFromNav{
+        margin-top: 135px !important;
+}
 
 
 // SERVICES
@@ -1007,9 +1100,9 @@ footer{
 }
 }
 
-.serviceSection{
-    margin-top: $margin3x;
-}
+// .servicesSection{
+//     margin-top: 135px !important;
+// }
 
 
 
@@ -1076,7 +1169,7 @@ footer{
 
 .policyMargin{
     margin-top: 24px;
-    width: 450px;
+    max-width: 450px;
 }
 
 .policyMiddleMargin{
@@ -1200,6 +1293,10 @@ form{
 
 .form-check-label{
     @include contentText();
+}
+
+.bs-gutter{
+    --bs-gutter-x: 1rem !important;
 }
 
 

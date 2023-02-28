@@ -908,6 +908,10 @@ footer .footerMenu .footerIcons {
   padding-left: 0 !important;
 }
 
+.serviceStylist {
+  margin-top: 24px !important;
+}
+
 .service {
   display: flex !important;
   justify-content: space-between !important;

@@ -1154,6 +1154,10 @@ footer{
     padding-left: 0 !important;
 }
 
+.serviceStylist{
+    margin-top: 24px !important; 
+}
+
 .service{
     @include flexOn(space-between, nowrap );
     width: 420px;

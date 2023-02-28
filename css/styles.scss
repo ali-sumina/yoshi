@@ -661,7 +661,10 @@ span{
     // @include borderTop(2px);
     .bookAppointTitle{
         // position: relative;
-        @include flexOn(center, nowrap);
+        // @include flexOn(center, nowrap);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 32px;
         .bookFlexShrink{
             flex-shrink: 0;
@@ -866,7 +869,7 @@ footer{
     }
 
     .stylist2, .stylist3, .stylist4, .stylist5, .stylist6{
-        display: none;
+        display: none !important;
         .stylistMobTitle{
             display: none;
             // padding: 0px 12px !important;
@@ -960,7 +963,7 @@ footer{
     .servicesWrapper{
         padding: 0px 12px;
         .serviceType{
-            margin-bottom: 24px;
+            margin-bottom: 24px !important;
         }
     }
 
@@ -1063,7 +1066,8 @@ footer{
 
     .servicesWrapper{
         width: 350px;
-        margin: 0px !important;
+        margin: 48px !important;
+        
     }
 
     .servicesMenu{
@@ -1071,7 +1075,7 @@ footer{
         .bookAppointTitle{
             @include flexOn(flex-start,nowrap );
             overflow-x: hidden;
-            padding-left: 60px !important;
+            padding-left: 12px !important;
         }
     }
 
@@ -1103,11 +1107,31 @@ footer{
     padding: 48px 0px;
     .bookAppointTitle{
         // position: relative;
-        @include flexOn(center, nowrap);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 72px;
         flex-shrink: 0 !important;
         padding-left: 12px;
 }
+}
+
+.serviceType{
+    margin-bottom: 24px !important;
+}
+
+.menuTitle{
+    padding-bottom: 4px !important;
+}
+
+.menuTitle:hover{
+    @include borderBottom(4px)
+}
+
+.menuChosen{
+    padding-bottom: 4px !important;
+    color: $red !important;
+
 }
 
 // .servicesSection{
@@ -1119,7 +1143,7 @@ footer{
 
 //Services w prices
 .servicesWrapper{
-    margin: 72px 0px;
+    // margin: 72px 0px;
     width: 420px;
     @include flexOn(flex-start, wrap);
     flex-direction: column;
@@ -1138,6 +1162,10 @@ footer{
 .priceFlex{
     @include flexOn(space-between, nowrap);
     gap: 32px;
+}
+
+.bangsPadding{
+    padding-right: 44px;
 }
 
 .serviceItem{
@@ -1212,7 +1240,7 @@ footer{
 
 // Stylists
 
-.stylistRobbie{
+.stylistRobbie {
     background-image: url(../img/robbie.png);
     background-color: #333333a5;
     @include addImageToDiv(561px);
@@ -1223,6 +1251,21 @@ footer{
     }
     .stylistRobbie:hover{
         background-image: url(../img/robbie-hovered.png);
+    }
+
+    .stylist2:hover{
+        background-image: url(../img/valerie-hovered.png);
+    }
+}
+
+.stylist2, .stylist3, .stylist4, .stylist5, .stylist6{
+    @include addImageToDiv(561px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .textFrameWrapper{
+        @include flexOn(flex-start, wrap );
+        width: 400px;
     }
 }
 

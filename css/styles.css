@@ -519,10 +519,9 @@ span {
   overflow-x: hidden !important;
 }
 .bookAndButton .bookAppointTitle {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 32px;
 }
 .bookAndButton .bookAppointTitle .bookFlexShrink {
@@ -694,7 +693,7 @@ footer .footerMenu .footerIcons {
     color: hsl(0deg, 0%, 20%);
   }
   .stylist2, .stylist3, .stylist4, .stylist5, .stylist6 {
-    display: none;
+    display: none !important;
   }
   .stylist2 .stylistMobTitle, .stylist3 .stylistMobTitle, .stylist4 .stylistMobTitle, .stylist5 .stylistMobTitle, .stylist6 .stylistMobTitle {
     display: none;
@@ -769,7 +768,7 @@ footer .footerMenu .footerIcons {
     padding: 0px 12px;
   }
   .servicesWrapper .serviceType {
-    margin-bottom: 24px;
+    margin-bottom: 24px !important;
   }
   .service {
     width: 350px !important;
@@ -842,7 +841,7 @@ footer .footerMenu .footerIcons {
   }
   .servicesWrapper {
     width: 350px;
-    margin: 0px !important;
+    margin: 48px !important;
   }
   .servicesMenu {
     justify-content: flex-start !important;
@@ -853,7 +852,7 @@ footer .footerMenu .footerIcons {
     align-items: center !important;
     flex-wrap: nowrap;
     overflow-x: hidden;
-    padding-left: 60px !important;
+    padding-left: 12px !important;
   }
   .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6, .standardImage, .robbiePort1 {
     height: 410px !important;
@@ -870,17 +869,32 @@ footer .footerMenu .footerIcons {
   padding: 48px 0px;
 }
 .servicesMenu .bookAppointTitle {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 72px;
   flex-shrink: 0 !important;
   padding-left: 12px;
 }
 
+.serviceType {
+  margin-bottom: 24px !important;
+}
+
+.menuTitle {
+  padding-bottom: 4px !important;
+}
+
+.menuTitle:hover {
+  border-bottom: 4px hsl(0deg, 0%, 20%) solid !important;
+}
+
+.menuChosen {
+  padding-bottom: 4px !important;
+  color: #C3553B !important;
+}
+
 .servicesWrapper {
-  margin: 72px 0px;
   width: 420px;
   display: flex !important;
   justify-content: flex-start !important;
@@ -908,6 +922,10 @@ footer .footerMenu .footerIcons {
   align-items: center !important;
   flex-wrap: nowrap;
   gap: 32px;
+}
+
+.bangsPadding {
+  padding-right: 44px;
 }
 
 .serviceItem {
@@ -1008,6 +1026,26 @@ footer .footerMenu .footerIcons {
 }
 .stylistRobbie .stylistRobbie:hover {
   background-image: url(../img/robbie-hovered.png);
+}
+.stylistRobbie .stylist2:hover {
+  background-image: url(../img/valerie-hovered.png);
+}
+
+.stylist2, .stylist3, .stylist4, .stylist5, .stylist6 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 561px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stylist2 .textFrameWrapper, .stylist3 .textFrameWrapper, .stylist4 .textFrameWrapper, .stylist5 .textFrameWrapper, .stylist6 .textFrameWrapper {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+  width: 400px;
 }
 
 .stylistTitle {

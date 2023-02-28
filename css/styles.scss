@@ -716,6 +716,12 @@ footer{
     
 }
 
+.noPadding{
+    padding: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 //testborders
 .borderSides{
     @include borderRight(4px);
@@ -976,6 +982,10 @@ footer{
     .servicesCancellation{
         margin-top: 56px !important;
     }
+
+    .robbieStaffImg{
+        @include borderTop(4px);
+    }
 }
 
 
@@ -1067,7 +1077,7 @@ footer{
 
     //About
 
-    .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6, .standardImage{
+    .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6, .standardImage, .robbiePort1{
         height: 410px !important;
     }
 
@@ -1303,23 +1313,25 @@ form{
 
 // STAFF
 .stylistBio{
-    padding: 72px 0px;
+    // padding: 72px 0px;
     .stylistBioLink{
         opacity: 0.7;
-        .stylistBioInst{
-            font-style: italic !important;
+        .stylistInstFlex{
+            display: flex !important;
+            .stylistBioInst{
+                font-style: italic !important;
+            }
         }
-        .stylistBioText{
-            //figure out
-            margin-top: 32px !important;
-        }
-
+    }
+    .stylistBioText{
+        //figure out
+        margin-top: 24px !important;
     }
     
 }
 
 .robbieStaffImg{
-    @include addImageToDiv(830px);
+    @include addImageToDiv(770px);
     background-image: url('../img/staff/robbie.png');
     background-position: top !important;
 }

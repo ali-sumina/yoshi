@@ -592,6 +592,12 @@ footer .footerMenu .footerIcons {
   gap: 32px;
 }
 
+.noPadding {
+  padding: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .borderSides {
   border-right: 4px hsl(0deg, 0%, 20%) solid !important;
   border-left: 4px hsl(0deg, 0%, 20%) solid !important;
@@ -781,6 +787,9 @@ footer .footerMenu .footerIcons {
   .servicesCancellation {
     margin-top: 56px !important;
   }
+  .robbieStaffImg {
+    border-top: 4px hsl(0deg, 0%, 20%) solid !important;
+  }
 }
 @media screen and (max-width: 576px) {
   body {
@@ -846,7 +855,7 @@ footer .footerMenu .footerIcons {
     overflow-x: hidden;
     padding-left: 60px !important;
   }
-  .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6, .standardImage {
+  .stylistRobbie, .stylist2, .stylist3, .stylist4, .stylist5, .stylist6, .standardImage, .robbiePort1 {
     height: 410px !important;
   }
   .formPadding {
@@ -1095,24 +1104,24 @@ form {
   --bs-gutter-x: 1rem !important;
 }
 
-.stylistBio {
-  padding: 72px 0px;
-}
 .stylistBio .stylistBioLink {
   opacity: 0.7;
 }
-.stylistBio .stylistBioLink .stylistBioInst {
+.stylistBio .stylistBioLink .stylistInstFlex {
+  display: flex !important;
+}
+.stylistBio .stylistBioLink .stylistInstFlex .stylistBioInst {
   font-style: italic !important;
 }
-.stylistBio .stylistBioLink .stylistBioText {
-  margin-top: 32px !important;
+.stylistBio .stylistBioText {
+  margin-top: 24px !important;
 }
 
 .robbieStaffImg {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 830px;
+  height: 770px;
   background-image: url("../img/staff/robbie.png");
   background-position: top !important;
 }

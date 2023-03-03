@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
-//BOOK APPOINTMENT POPUP
-// $('.clickBookAppoint').onclick(function(){
-//   togglePopup();
+// BOOK APPOINTMENT POPUP
+// $('#clickBookAppoint').onclick(function(){
+//   $('#formVisibility').addClass('active');
 // })
 
-$('.confirmBookAppoint').click(function(){
-  $('.formVisibility').addClass('invisible');
-  $('.confirmVisibility').removeClass('invisible');
+$('#confirmBookAppoint').click(function(){
+  $('#formVisibility').addClass('invisible');
+  $('#confirmVisibility').removeClass('invisible');
 })
 
 

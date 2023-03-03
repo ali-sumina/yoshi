@@ -226,12 +226,14 @@ span {
   font-size: 20px !important;
   background-color: hsl(0deg, 0%, 20%) !important;
   color: #F9F5EE !important;
+  border: 4px hsl(0deg, 0%, 20%) solid !important;
   width: 230px !important;
 }
 
 .btn:hover {
   background-color: #C3553B !important;
   color: #F9F5EE !important;
+  border: 4px #C3553B solid !important;
 }
 
 .btnLight {
@@ -1207,11 +1209,40 @@ form {
   margin-top: 24px;
 }
 
+.modal-body, .modal-header {
+  background-color: #F9F5EE;
+}
+
+#confirmVisibility {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .confirmBox {
   display: flex !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: center !important;
   flex-wrap: nowrap;
+  padding: 24px 48px;
+  border: 2px hsl(0deg, 0%, 20%) solid !important;
+  width: 460px;
+}
+
+.confDataFlex {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.confDateFlex {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: nowrap;
+  gap: 32px;
 }
 
 .confTextFlex {
@@ -1241,6 +1272,15 @@ form {
 .dateTimeFlex {
   display: flex;
   gap: 24px;
+}
+
+.popupButtonsFlex {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 .invisible {

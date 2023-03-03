@@ -382,12 +382,14 @@ span{
 //BUTTONS
 .btn{
     @include buttonDesign($darkgrey);
+    @include borderDesign(4px);
     width: 230px !important;
 }
 
 .btn:hover{
     background-color: $red !important;
     color: $lightcolor !important;
+    border: 4px $red solid !important;
 }
 //     background-color: $darkgrey !important;
 //     color: $lightcolor !important;
@@ -1421,9 +1423,35 @@ form{
 
 
 
-//POPUPS
+//POPUPS{
+.modal-body, .modal-header{
+    background-color: $lightcolor;
+}
+
+#confirmVisibility{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .confirmBox{
-    @include flexOn(center, nowrap);
+    @include flexOn(flex-start, nowrap);
+    padding: 24px 48px;
+    @include borderDesign(2px);
+    width: 460px;
+}
+
+.confDataFlex{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.confDateFlex{
+    @include flexOn(flex-start,nowrap);
+    gap: 32px;
 }
 
 .confTextFlex{
@@ -1448,6 +1476,11 @@ form{
     gap: 24px;
 }
 
+.popupButtonsFlex{
+    @include flexOn(center, nowrap);
+    gap: 16px;
+    margin-top: 32px;
+}
 
 //visibility
 .invisible{

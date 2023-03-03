@@ -62,7 +62,7 @@
 <body>
 
     <div class="bookAppoint hide marginTopForm">
-        <button class="btn clickBookAppoint" data-bs-toggle="modal" data-bs-target="#bookAppointForm">Book an appointment</button>
+        <button class="btn" id="clickBookAppoint" data-bs-toggle="modal" data-bs-target="#bookAppointForm">Book an appointment</button>
       </div>
     </div>
 
@@ -79,8 +79,8 @@
         </div>
         <div class="modal-body">
 
-          <div class="formVisibility">
-            <form action="">
+          <div id="formVisibility">
+            <!-- <form action=""> -->
                 <div class="container">
     
                     <!-- Name -->
@@ -138,11 +138,11 @@
                       </select>
     
                       <!-- DAte / TIME -->
-                      <div class="row">
+                      <div class="row bs-gutter">
                         <div class="col">
                             <h6 class="marginTopForm">Date</h6>
                     <select class="form-select fieldsWidth" aria-label="Default select example">
-                        <p>SENIOR STYLISTS</p>
+                        <!-- <p>SENIOR STYLISTS</p> -->
                         <option selected>Choose date</option>
                         <option value="1">02/03</option>
                         <option value="2">03/03</option>
@@ -152,7 +152,7 @@
                         <div class="col">
                             <h6 class="marginTopForm">Time</h6>
                     <select class="form-select fieldsWidth" aria-label="Default select example">
-                        <p>SENIOR STYLISTS</p>
+                        <!-- <p>SENIOR STYLISTS</p> -->
                         <option selected>Choose time</option>
                         <option value="1">1:00PM</option>
                         <option value="2">2:00PM</option>
@@ -161,21 +161,56 @@
                         </div>
                       </div>
                       <div class="bookAppoint hide marginTopForm">
-                        <button class="btn confirmBookAppoint" data-bs-target="#confirmPopup" data-bs-toggle="modal">Book an appointment</button>
+                        <button class="btn" id="confirmBookAppoint" data-bs-target="#confirmPopup" data-bs-toggle="modal">Book an appointment</button>
                       </div>
                     </div>
                 </div>
-            </form>
-          </div>
+            <!-- </form> -->
+          
 
-          <div class="confirmVisibility invisible">
-            <h1>confirm your booking</h1>
+          <div id="confirmVisibility" class="invisible">
+            <h3 class="confHeading">confirm your booking</h3>
             <div class="confirmBox">
+              <div class="confDataFlex">
               <div class="confTextFlex">
               <div class="confTitle">Name</div>
               <div class="confData">Alex Sumina</div>
           </div>
+
+          <div class="confTextFlex">
+            <div class="confTitle">Contact</div>
+            <div class="confData">aarichyan@gmail.com</div>
+        </div>
+
+        <div class="confTextFlex">
+          <div class="confTitle">Services</div>
+          <div class="confData">#Women's haircut #Styling</div>
+      </div>
+
+      <div class="confTextFlex">
+        <div class="confTitle">Stylist</div>
+        <div class="confData">Robbie Dough</div>
+    </div>
+
+    <div class="confDateFlex">
+    <div class="confTextFlex">
+      <div class="confTitle">Date</div>
+      <div class="confData">12/24/2023</div>
+  </div>
+  <div class="confTextFlex">
+    <div class="confTitle">Time</div>
+    <div class="confData">3:00PM</div>
+</div>
+</div>
+</div>
+
           </div>
+
+          <div class="popupButtonsFlex">
+          <button class="btnLight">back to home page</button>
+          <button class="btn" id="clickBookAppoint" data-bs-toggle="modal" data-bs-target="#bookAppointForm">Book an appointment</button>
+            </div>
+
           </div>          
 
 
@@ -208,7 +243,7 @@
 
 
         </div>
-        <!-- <div class="modal-footer">
+        <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Understood</button>
         </div> -->

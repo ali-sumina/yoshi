@@ -1213,6 +1213,10 @@ form {
   background-color: #F9F5EE;
 }
 
+.modal-body {
+  max-height: 850px;
+}
+
 #confirmVisibility {
   display: flex;
   flex-direction: column;
@@ -1283,6 +1287,19 @@ form {
   margin-top: 32px;
 }
 
+#popBackButton {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 20%);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap;
+}
+
 .invisible {
   display: none;
+}
+
+.noMarginTop {
+  margin-top: 0 !important;
 }/*# sourceMappingURL=styles.css.map */

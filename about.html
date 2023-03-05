@@ -10,7 +10,43 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <style>
+      .wrapper{
+          border: 2px darkgray solid;
+          width: 798px;
+          /* height: 70%; */
 
+      }
+
+      .modal-body{
+          padding: 30px 70px !important;
+      }
+
+      .marginTopForm{
+          margin-top: 24px !important;
+      }
+
+      .form-check, .form-select{
+          margin-top: 12px;
+      }
+
+
+      .hideMethod{
+          display: none;
+      }
+
+      /* .fieldsWidth{
+          width: 330px !important;
+      } */
+
+      form{
+          margin-top: 0 !important;
+      }
+
+     
+
+
+  </style>
 </head>
 <body>
     <!-- NAV -->
@@ -64,7 +100,7 @@
                     <a class="neutralLink" href="">+1 (999) 999-9999</a>
                 </p>
             </div>
-                <button class="btn">Book an appointment</button>
+                <button class="btn" id="clickBookAppoint" data-bs-toggle="modal" data-bs-target="#bookAppointForm">Book an appointment</button>
             </div>
           </div>
     
@@ -77,7 +113,7 @@
     
           <!-- Book an Appointment Button -->
           <div class="bookAppoint hide">
-            <button class="btn">Book an appointment</button>
+            <button class="btn" id="clickBookAppoint" data-bs-toggle="modal" data-bs-target="#bookAppointForm">Book an appointment</button>
           </div>
         </div>
       </nav>
@@ -372,7 +408,7 @@
         <img src="img/redstar.svg" alt="" class="redStarIcon">
     </div>
     <div class="appointButton">
-    <button class="btn" style="font-size: 26px !important; width: 350px !important;">Book an appointment</button>
+    <button class="btn" id="clickBookAppoint" data-bs-toggle="modal" data-bs-target="#bookAppointForm" style="font-size: 26px !important; width: 350px !important;">Book an appointment</button>
 </div>
 </div>
 
@@ -418,6 +454,160 @@
         </div>
 
     </footer>
+
+     <!-- POPUP -->
+     <!-- Modal -->
+<div class="modal" id="bookAppointForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 staticBackdropLabel" id="staticBackdropLabel">Book an appointment</h1>
+        <!-- <a href="index.html" class="logoLink">
+          <img src="img/logo.svg" alt="" class="logoSize" style="width: 70px;">
+      </a> -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div id="formVisibility">
+          <!-- <form action=""> -->
+              <div class="container">
+  
+                  <!-- Name -->
+                  <div class="row">
+                      <label for="fullName" class="form-label">
+                          <h6 class="marginTopForm">Full Name</h6>
+                       </label>
+                       <input type="text" id="fullName" class="form-control" placeholder="Enter your name">
+                  </div>
+  
+                  <!-- Contact method -->
+                  <h6 class="marginTopForm">How do you want us to contact you?</h6>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <label class="form-check-label" for="inlineRadio1">Email</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <label class="form-check-label" for="inlineRadio2">Phone Number</label>
+                    </div>
+  
+                  <!-- EMAIL if chosen -->
+                  <div class="row emailChoice">
+                      <label for="fullName" class="form-label">
+                          <h6 class="marginTopForm">Email</h6>
+                       </label>
+                       <input type="text" id="fullName" class="form-control" placeholder="Enter your email">
+                  </div>
+  
+                  <!-- PHONE NUM if chosen -->
+                  <div class="row emailChoice hideMethod">
+                      <label for="fullName" class="form-label">
+                          <h6 class="marginTopForm">Phone Number</h6>
+                       </label>
+                       <input type="text" id="fullName" class="form-control" placeholder="Enter your phone number">
+                  </div>
+  
+                  <!-- SERVICES -->
+                  <h6 class="marginTopForm">Service</h6>
+                  <select class="form-select" aria-label="Default select example">
+                      <option selected>Choose service</option>
+                      <option value="1">Haircut</option>
+                      <option value="2">Coloring</option>
+                      <option value="3">Styling</option>
+                    </select>
+  
+                  <!-- STYLIST -->
+                  <h6 class="marginTopForm">Stylist</h6>
+                  <select class="form-select" aria-label="Default select example">
+                      <p>SENIOR STYLISTS</p>
+                      <option selected>Choose stylist</option>
+                      <option value="1">Robbie</option>
+                      <option value="2">Valeriia</option>
+                      <option value="3">Steven</option>
+                    </select>
+  
+                    <!-- DAte / TIME -->
+                    <div class="row bs-gutter">
+                      <div class="col">
+                          <h6 class="marginTopForm">Date</h6>
+                  <select class="form-select fieldsWidth" aria-label="Default select example">
+                      <!-- <p>SENIOR STYLISTS</p> -->
+                      <option selected>Choose date</option>
+                      <option value="1">02/03</option>
+                      <option value="2">03/03</option>
+                      <option value="3">04/03</option>
+                    </select>
+                      </div>
+                      <div class="col">
+                          <h6 class="marginTopForm">Time</h6>
+                  <select class="form-select fieldsWidth" aria-label="Default select example">
+                      <!-- <p>SENIOR STYLISTS</p> -->
+                      <option selected>Choose time</option>
+                      <option value="1">1:00PM</option>
+                      <option value="2">2:00PM</option>
+                      <option value="3">3:00PM</option>
+                    </select>
+                      </div>
+                    </div>
+                    <div class="bookAppoint hide marginTopForm">
+                      <a href="#confirmPopup" class="btn" id="confirmBookAppoint">Book an appointment</a>
+                    </div>
+                  </div>
+              </div>
+          <!-- </form> -->
+        
+
+        <div id="confirmVisibility" class="invisible">
+          <h3 class="confHeading">confirm your booking</h3>
+          <div class="confirmBox">
+            <div class="confDataFlex">
+            <div class="confTextFlex">
+            <div class="confTitle">Name</div>
+            <div class="confData">Alex Sumina</div>
+        </div>
+
+        <div class="confTextFlex">
+          <div class="confTitle">Contact</div>
+          <div class="confData">aarichyan@gmail.com</div>
+      </div>
+
+      <div class="confTextFlex">
+        <div class="confTitle">Services</div>
+        <div class="confData">#Women's haircut #Styling</div>
+    </div>
+
+    <div class="confTextFlex">
+      <div class="confTitle">Stylist</div>
+      <div class="confData">Robbie Dough</div>
+  </div>
+
+  <div class="confDateFlex">
+  <div class="confTextFlex">
+    <div class="confTitle">Date</div>
+    <div class="confData">12/24/2023</div>
+</div>
+<div class="confTextFlex">
+  <div class="confTitle">Time</div>
+  <div class="confData">3:00PM</div>
+</div>
+</div>
+</div>
+
+        </div>
+
+        <div class="popupButtonsFlex">
+        <a href="#bookAppointForm" class="btnLight" id="popBackButton">Go back</a>
+        <a href="thankyou.html"> <button class="btn" id="clickBookAppoint">Book an appointment </button></a>
+          </div>
+
+        </div>          
+
+
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

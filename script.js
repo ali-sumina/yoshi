@@ -10,6 +10,12 @@ $('#confirmBookAppoint').click(function(){
   $('#confirmVisibility').removeClass('invisible');
 })
 
+$('#popBackButton').click(function(){
+  $('#confirmVisibility').addClass('invisible');
+  $('#formVisibility').removeClass('invisible');
+
+})
+
 
 //ROBBIE HOVER
 $(".stylistRobbie").mouseenter(function(){

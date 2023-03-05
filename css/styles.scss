@@ -627,6 +627,14 @@ span{
     }
 }
 
+.copyright{
+    color: $lightcolor;
+    @include contentText();
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 48px;
+}
+
 .marginTop{
     margin-top: $marginX;
 }
@@ -659,11 +667,14 @@ span{
 .bookAndButton{
     padding: $margin4x 0px $margin3x !important;
     overflow-x: hidden !important;
+    flex-shrink: 0;
     // padding-bottom: $margin4x;
     // @include borderTop(2px);
     .bookAppointTitle{
         // position: relative;
         // @include flexOn(center, nowrap);
+        flex-shrink: 0;
+        overflow-x: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -951,6 +962,14 @@ footer{
             h1{
                 color: $lightcolor !important;
             }
+    }
+
+    .modal-body{
+        max-height: 920px !important;
+    }
+
+    .confirmBox{
+        padding: 24px 64px !important;
     }
 }
 
@@ -1429,7 +1448,7 @@ form{
 }
 
 .modal-body{
-    max-height: 850px;
+    max-height: 920px;
 }
 
 #confirmVisibility{
@@ -1489,6 +1508,7 @@ form{
 #popBackButton{
     @include neutralLink($darkgrey);
     @include flexOn(center,nowrap );
+    text-align: center;
 }
 
 //visibility
@@ -1498,6 +1518,11 @@ form{
 
 .noMarginTop{
     margin-top: 0 !important;
+}
+
+//LITTLE FIXES
+.confFormHeading{
+    text-align: center;
 }
 
 

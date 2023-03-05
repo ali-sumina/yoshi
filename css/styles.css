@@ -485,6 +485,18 @@ span {
   width: 380px;
 }
 
+.copyright {
+  color: #F9F5EE;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 48px;
+}
+
 .marginTop {
   margin-top: 24px;
 }
@@ -519,8 +531,11 @@ span {
 .bookAndButton {
   padding: 72px 0px 48px !important;
   overflow-x: hidden !important;
+  flex-shrink: 0;
 }
 .bookAndButton .bookAppointTitle {
+  flex-shrink: 0;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -759,6 +774,12 @@ footer .footerMenu .footerIcons {
   }
   .bannerTextMob .word3 h1 {
     color: #F9F5EE !important;
+  }
+  .bannerTextMob .modal-body {
+    max-height: 920px !important;
+  }
+  .bannerTextMob .confirmBox {
+    padding: 24px 64px !important;
   }
   .bookAndButton {
     padding: 48px 0px 32px !important;
@@ -1214,7 +1235,7 @@ form {
 }
 
 .modal-body {
-  max-height: 850px;
+  max-height: 920px;
 }
 
 #confirmVisibility {
@@ -1294,6 +1315,7 @@ form {
   justify-content: center !important;
   align-items: center !important;
   flex-wrap: nowrap;
+  text-align: center;
 }
 
 .invisible {
@@ -1302,4 +1324,8 @@ form {
 
 .noMarginTop {
   margin-top: 0 !important;
+}
+
+.confFormHeading {
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

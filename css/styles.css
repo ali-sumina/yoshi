@@ -812,6 +812,9 @@ footer .footerMenu .footerIcons {
   .robbieStaffImg {
     border-top: 4px hsl(0deg, 0%, 20%) solid !important;
   }
+  .confDetails {
+    padding-left: 64px !important;
+  }
 }
 @media screen and (max-width: 576px) {
   body {

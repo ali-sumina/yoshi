@@ -1010,6 +1010,10 @@ footer{
     .robbieStaffImg{
         @include borderTop(4px);
     }
+
+    .confDetails{
+        padding-left: 64px !important;
+    }
 }
 
 

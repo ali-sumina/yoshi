@@ -506,7 +506,7 @@ span {
   background-repeat: no-repeat;
   background-position: center;
   height: url("../img/map.png");
-  height: 455px;
+  /* height: 455px; */
 }
 
 .textFrame {
